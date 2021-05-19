@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Create Upload page</title>
+
+    <!-- Font Awsome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- Dropzon CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/dropzone.css">
+    <!-- Perfect SCrollbar -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.css">
+    <!-- Bootstrap Selectpicker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <!-- Datepicker -->
+    <link id="bsdp-css" href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <!--  Styles -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  </head>
+  <body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-white border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom">Music</div>
+      <div class="list-group list-group-flush">
+        <a href="dashboard.html" class="list-group-item list-group-item-action active">Dashboard</a>
+        <a href="albums.html" class="list-group-item list-group-item-action">Albums</a>
+        <a href="stores.html" class="list-group-item list-group-item-action">Stores</a>
+        <a href="genres.html" class="list-group-item list-group-item-action">Genres</a>
+        <a href="music.html" class="list-group-item list-group-item-action">Music</a>
+        <a href="album-listing.html" class="list-group-item list-group-item-action">Album Listing</a>
+        <a href="grid-album.html" class="list-group-item list-group-item-action">Album Grid</a>
+        <a href="login.html" class="list-group-item list-group-item-action">Login</a>
+        <a href="register.html" class="list-group-item list-group-item-action">Register</a>
+        <a href="forgot_password.html" class="list-group-item list-group-item-action">Forgot Password</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">
+          <svg class="svg-inline--fa fa-align-left fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M288 44v40c0 8.837-7.163 16-16 16H16c-8.837 0-16-7.163-16-16V44c0-8.837 7.163-16 16-16h256c8.837 0 16 7.163 16 16zM0 172v40c0 8.837 7.163 16 16 16h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16zm16 312h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm256-200H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16h256c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16z"></path></svg>
+        </button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle noarrow" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="assets/images/user-avatar.jpg" align="user_img" class="rounded-circle" width="40">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#"><i class="fas fa-user"></i> &nbsp;Profile</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> &nbsp;Setting</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fas fa-power-off"></i> &nbsp; Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        <div class="container-fluid p-4">
+            <div class="page-title-area mt-3 mb-5">
+              <div class="title-bredcrumb d-flex justify-content-between">
+                <h2 class="mb-0">Music Upload</h2>
+                <a href="music.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> &nbsp;Back</a>
+              </div>
+            </div>
+          <div class="music-upload-area bg-white p-4 mt-5 shadow mb-5">
+            <div class="heading-music mb-4">
+              <h2 class="bg-heading-color p-3 text-white mb-0 font-300 text-uppercase">Upload Music</h2>
+            </div>
+            <form action="" method="">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group mb-4">
+                    <label>Stores</label>
+                    <select class="selectpicker form-control" name="stores" multiple="">
+                      <option>Spotify</option>
+                      <option>Itunes</option>
+                      <option>Apple Music</option>
+                      <option>Google Play and Youtube music</option>
+                      <option>Amazon</option>
+                      <option>Pandora</option>
+                      <option>Deezer</option>
+                      <option>Tidal</option>
+                      <option>Napster</option>
+                      <option>iHeartRadio</option>
+                      <option>ClaroMusica</option>
+                      <option>Saavn</option>
+                      <option>MediaNet</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group mb-4">
+                    <label>Number of Songs</label>
+                    <select class="form-control" name="no_of_songs">
+                      <option value="1 song single">1 song single</option>
+                      <option value="2 song single">2 songs</option>
+                      <option value="3 songs">3 songs</option>
+                      <option value="4 songs">4 songs</option>
+                      <option value="5 songs">5 songs</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group mb-4">
+                    <label>Language</label>
+                      <select class="form-control" name="language">
+                         <option value="Afganistan">Afghanistan</option>
+                         <option value="Albania">Albania</option>
+                         <option value="Algeria">Algeria</option>
+                         <option value="American Samoa">American Samoa</option>
+                         <option value="Andorra">Andorra</option>
+                         <option value="Angola">Angola</option>
+                         <option value="Anguilla">Anguilla</option>
+                         <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                         <option value="Argentina">Argentina</option>
+                         <option value="Armenia">Armenia</option>
+                         <option value="Aruba">Aruba</option>
+                         <option value="Australia">Australia</option>
+                         <option value="Austria">Austria</option>
+                         <option value="Azerbaijan">Azerbaijan</option>
+                         <option value="Bahamas">Bahamas</option>
+                         <option value="Bahrain">Bahrain</option>
+                         <option value="Bangladesh">Bangladesh</option>
+                         <option value="Barbados">Barbados</option>
+                         <option value="Belarus">Belarus</option>
+                         <option value="Belgium">Belgium</option>
+                         <option value="Belize">Belize</option>
+                         <option value="Benin">Benin</option>
+                         <option value="Bermuda">Bermuda</option>
+                         <option value="Bhutan">Bhutan</option>
+                         <option value="Bolivia">Bolivia</option>
+                         <option value="Bonaire">Bonaire</option>
+                         <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                         <option value="Botswana">Botswana</option>
+                         <option value="Brazil">Brazil</option>
+                         <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                         <option value="Brunei">Brunei</option>
+                         <option value="Bulgaria">Bulgaria</option>
+                         <option value="Burkina Faso">Burkina Faso</option>
+                         <option value="Burundi">Burundi</option>
+                         <option value="Cambodia">Cambodia</option>
+                         <option value="Cameroon">Cameroon</option>
+                         <option value="Canada">Canada</option>
+                         <option value="Canary Islands">Canary Islands</option>
+                         <option value="Cape Verde">Cape Verde</option>
+                         <option value="Cayman Islands">Cayman Islands</option>
+                         <option value="Central African Republic">Central African Republic</option>
+                         <option value="Chad">Chad</option>
+                         <option value="Channel Islands">Channel Islands</option>
+                         <option value="Chile">Chile</option>
+                         <option value="China">China</option>
+                         <option value="Christmas Island">Christmas Island</option>
+                         <option value="Cocos Island">Cocos Island</option>
+                         <option value="Colombia">Colombia</option>
+                         <option value="Comoros">Comoros</option>
+                         <option value="Congo">Congo</option>
+                         <option value="Cook Islands">Cook Islands</option>
+                         <option value="Costa Rica">Costa Rica</option>
+                         <option value="Cote DIvoire">Cote DIvoire</option>
+                         <option value="Croatia">Croatia</option>
+                         <option value="Cuba">Cuba</option>
+                         <option value="Curaco">Curacao</option>
+                         <option value="Cyprus">Cyprus</option>
+                         <option value="Czech Republic">Czech Republic</option>
+                         <option value="Denmark">Denmark</option>
+                         <option value="Djibouti">Djibouti</option>
+                         <option value="Dominica">Dominica</option>
+                         <option value="Dominican Republic">Dominican Republic</option>
+                         <option value="East Timor">East Timor</option>
+                         <option value="Ecuador">Ecuador</option>
+                         <option value="Egypt">Egypt</option>
+                         <option value="El Salvador">El Salvador</option>
+                         <option value="Equatorial Guinea">Equatorial Guinea</option>
+                         <option value="Eritrea">Eritrea</option>
+                         <option value="Estonia">Estonia</option>
+                         <option value="Ethiopia">Ethiopia</option>
+                         <option value="Falkland Islands">Falkland Islands</option>
+                         <option value="Faroe Islands">Faroe Islands</option>
+                         <option value="Fiji">Fiji</option>
+                         <option value="Finland">Finland</option>
+                         <option value="France">France</option>
+                         <option value="French Guiana">French Guiana</option>
+                         <option value="French Polynesia">French Polynesia</option>
+                         <option value="French Southern Ter">French Southern Ter</option>
+                         <option value="Gabon">Gabon</option>
+                         <option value="Gambia">Gambia</option>
+                         <option value="Georgia">Georgia</option>
+                         <option value="Germany">Germany</option>
+                         <option value="Ghana">Ghana</option>
+                         <option value="Gibraltar">Gibraltar</option>
+                         <option value="Great Britain">Great Britain</option>
+                         <option value="Greece">Greece</option>
+                         <option value="Greenland">Greenland</option>
+                         <option value="Grenada">Grenada</option>
+                         <option value="Guadeloupe">Guadeloupe</option>
+                         <option value="Guam">Guam</option>
+                         <option value="Guatemala">Guatemala</option>
+                         <option value="Guinea">Guinea</option>
+                         <option value="Guyana">Guyana</option>
+                         <option value="Haiti">Haiti</option>
+                         <option value="Hawaii">Hawaii</option>
+                         <option value="Honduras">Honduras</option>
+                         <option value="Hong Kong">Hong Kong</option>
+                         <option value="Hungary">Hungary</option>
+                         <option value="Iceland">Iceland</option>
+                         <option value="Indonesia">Indonesia</option>
+                         <option value="India">India</option>
+                         <option value="Iran">Iran</option>
+                         <option value="Iraq">Iraq</option>
+                         <option value="Ireland">Ireland</option>
+                         <option value="Isle of Man">Isle of Man</option>
+                         <option value="Israel">Israel</option>
+                         <option value="Italy">Italy</option>
+                         <option value="Jamaica">Jamaica</option>
+                         <option value="Japan">Japan</option>
+                         <option value="Jordan">Jordan</option>
+                         <option value="Kazakhstan">Kazakhstan</option>
+                         <option value="Kenya">Kenya</option>
+                         <option value="Kiribati">Kiribati</option>
+                         <option value="Korea North">Korea North</option>
+                         <option value="Korea Sout">Korea South</option>
+                         <option value="Kuwait">Kuwait</option>
+                         <option value="Kyrgyzstan">Kyrgyzstan</option>
+                         <option value="Laos">Laos</option>
+                         <option value="Latvia">Latvia</option>
+                         <option value="Lebanon">Lebanon</option>
+                         <option value="Lesotho">Lesotho</option>
+                         <option value="Liberia">Liberia</option>
+                         <option value="Libya">Libya</option>
+                         <option value="Liechtenstein">Liechtenstein</option>
+                         <option value="Lithuania">Lithuania</option>
+                         <option value="Luxembourg">Luxembourg</option>
+                         <option value="Macau">Macau</option>
+                         <option value="Macedonia">Macedonia</option>
+                         <option value="Madagascar">Madagascar</option>
+                         <option value="Malaysia">Malaysia</option>
+                         <option value="Malawi">Malawi</option>
+                         <option value="Maldives">Maldives</option>
+                         <option value="Mali">Mali</option>
+                         <option value="Malta">Malta</option>
+                         <option value="Marshall Islands">Marshall Islands</option>
+                         <option value="Martinique">Martinique</option>
+                         <option value="Mauritania">Mauritania</option>
+                         <option value="Mauritius">Mauritius</option>
+                         <option value="Mayotte">Mayotte</option>
+                         <option value="Mexico">Mexico</option>
+                         <option value="Midway Islands">Midway Islands</option>
+                         <option value="Moldova">Moldova</option>
+                         <option value="Monaco">Monaco</option>
+                         <option value="Mongolia">Mongolia</option>
+                         <option value="Montserrat">Montserrat</option>
+                         <option value="Morocco">Morocco</option>
+                         <option value="Mozambique">Mozambique</option>
+                         <option value="Myanmar">Myanmar</option>
+                         <option value="Nambia">Nambia</option>
+                         <option value="Nauru">Nauru</option>
+                         <option value="Nepal">Nepal</option>
+                         <option value="Netherland Antilles">Netherland Antilles</option>
+                         <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                         <option value="Nevis">Nevis</option>
+                         <option value="New Caledonia">New Caledonia</option>
+                         <option value="New Zealand">New Zealand</option>
+                         <option value="Nicaragua">Nicaragua</option>
+                         <option value="Niger">Niger</option>
+                         <option value="Nigeria">Nigeria</option>
+                         <option value="Niue">Niue</option>
+                         <option value="Norfolk Island">Norfolk Island</option>
+                         <option value="Norway">Norway</option>
+                         <option value="Oman">Oman</option>
+                         <option value="Pakistan">Pakistan</option>
+                         <option value="Palau Island">Palau Island</option>
+                         <option value="Palestine">Palestine</option>
+                         <option value="Panama">Panama</option>
+                         <option value="Papua New Guinea">Papua New Guinea</option>
+                         <option value="Paraguay">Paraguay</option>
+                         <option value="Peru">Peru</option>
+                         <option value="Phillipines">Philippines</option>
+                         <option value="Pitcairn Island">Pitcairn Island</option>
+                         <option value="Poland">Poland</option>
+                         <option value="Portugal">Portugal</option>
+                         <option value="Puerto Rico">Puerto Rico</option>
+                         <option value="Qatar">Qatar</option>
+                         <option value="Republic of Montenegro">Republic of Montenegro</option>
+                         <option value="Republic of Serbia">Republic of Serbia</option>
+                         <option value="Reunion">Reunion</option>
+                         <option value="Romania">Romania</option>
+                         <option value="Russia">Russia</option>
+                         <option value="Rwanda">Rwanda</option>
+                         <option value="St Barthelemy">St Barthelemy</option>
+                         <option value="St Eustatius">St Eustatius</option>
+                         <option value="St Helena">St Helena</option>
+                         <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                         <option value="St Lucia">St Lucia</option>
+                         <option value="St Maarten">St Maarten</option>
+                         <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                         <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                         <option value="Saipan">Saipan</option>
+                         <option value="Samoa">Samoa</option>
+                         <option value="Samoa American">Samoa American</option>
+                         <option value="San Marino">San Marino</option>
+                         <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                         <option value="Saudi Arabia">Saudi Arabia</option>
+                         <option value="Senegal">Senegal</option>
+                         <option value="Seychelles">Seychelles</option>
+                         <option value="Sierra Leone">Sierra Leone</option>
+                         <option value="Singapore">Singapore</option>
+                         <option value="Slovakia">Slovakia</option>
+                         <option value="Slovenia">Slovenia</option>
+                         <option value="Solomon Islands">Solomon Islands</option>
+                         <option value="Somalia">Somalia</option>
+                         <option value="South Africa">South Africa</option>
+                         <option value="Spain">Spain</option>
+                         <option value="Sri Lanka">Sri Lanka</option>
+                         <option value="Sudan">Sudan</option>
+                         <option value="Suriname">Suriname</option>
+                         <option value="Swaziland">Swaziland</option>
+                         <option value="Sweden">Sweden</option>
+                         <option value="Switzerland">Switzerland</option>
+                         <option value="Syria">Syria</option>
+                         <option value="Tahiti">Tahiti</option>
+                         <option value="Taiwan">Taiwan</option>
+                         <option value="Tajikistan">Tajikistan</option>
+                         <option value="Tanzania">Tanzania</option>
+                         <option value="Thailand">Thailand</option>
+                         <option value="Togo">Togo</option>
+                         <option value="Tokelau">Tokelau</option>
+                         <option value="Tonga">Tonga</option>
+                         <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                         <option value="Tunisia">Tunisia</option>
+                         <option value="Turkey">Turkey</option>
+                         <option value="Turkmenistan">Turkmenistan</option>
+                         <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                         <option value="Tuvalu">Tuvalu</option>
+                         <option value="Uganda">Uganda</option>
+                         <option value="United Kingdom">United Kingdom</option>
+                         <option value="Ukraine">Ukraine</option>
+                         <option value="United Arab Erimates">United Arab Emirates</option>
+                         <option value="United States of America">United States of America</option>
+                         <option value="Uraguay">Uruguay</option>
+                         <option value="Uzbekistan">Uzbekistan</option>
+                         <option value="Vanuatu">Vanuatu</option>
+                         <option value="Vatican City State">Vatican City State</option>
+                         <option value="Venezuela">Venezuela</option>
+                         <option value="Vietnam">Vietnam</option>
+                         <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                         <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                         <option value="Wake Island">Wake Island</option>
+                         <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                         <option value="Yemen">Yemen</option>
+                         <option value="Zaire">Zaire</option>
+                         <option value="Zambia">Zambia</option>
+                         <option value="Zimbabwe">Zimbabwe</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group mb-4">
+                    <label>Artist / band name &nbsp;<a href="#artist-name-modal" data-toggle="modal" class="help-icon"><i class="fas fa-info-circle"></i></a></label>
+                    <input type="text" name="artist_name" class="form-control" value="">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group mb-4">
+                    <label>Record label </label>
+                    <input type="text" name="record_label" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group mb-4">
+                    <label>Release date</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control datepicker">
+                        <div class="input-group-append"><span class="input-group-text bg-white border-left-0"><i class="far fa-clock"></i></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-4">
+                    <label>Primary genre</label>
+                    <select class="form-control" name="primary_genre">
+                      <option value="Chiristian/Gospel">Chiristian/Gospel</option>
+                      <option value="Chiristian/Gospel">Chiristian/Gospel</option>
+                      <option value="Chiristian/Gospel">Chiristian/Gospel</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-4">
+                    <label>Secondary genre</label>
+                    <select class="form-control" name="primary_genre">
+                      <option disabled="" selected="">Select another Genre</option>
+                      <option value="Secondary Genre">Secondary Genre</option>
+                      <option value="Secondary Genre">Secondary Genre</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group mb-4">
+                    <label>Album Cover &nbsp;<a href="#album-cover" data-toggle="modal" class="help-icon"><i class="fas fa-info-circle"></i></a></label>
+                    <form action="/file-upload" class="dropzone">
+                      <div class="dropzone" id="myDropzone"></div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group mb-4">
+                    <label class="d-block">Previously released</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="yes" name="previously_released" class="custom-control-input">
+                      <label class="custom-control-label" for="yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="no" name="previously_released" class="custom-control-input">
+                      <label class="custom-control-label" for="no">No</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="d-block">Preorder</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline1">No don’t let anyone buy until the release date</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2">No don’t let anyone buy until the release date</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="accordion tracks-area mt-4 mb-4" id="tracks">
+                    <div class="card rounded-0 mb-2 shadow-sm">
+                      <div class="card-header border-top bg-white rounded-0" id="headingOne">
+                        <h5 class="mb-0">
+                          <a data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1" class="">
+                          Track 1 </a>
+                        </h5>
+                      </div>
+
+                      <div id="collapse-1" class="collapse" aria-labelledby="headingOne" data-parent="#tracks">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group mb-4">
+                                <label>Song Title  &nbsp;<a href="#songtitle" data-toggle="modal" class="help-icon"><i class="fas fa-info-circle"></i></a></label>
+                                <input type="text" name="song_title" class="form-control" value="">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group mb-4">
+                                <label>Track Price</label>
+                                <select name="track_price" class="form-control">
+                                  <option value="0.99">0.99</option>
+                                  <option value="1.29">1.29</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                <label class="d-block">Songwriter &nbsp;<a href="#songwriter" data-toggle="modal" class="help-icon"><i class="fas fa-info-circle"></i></a></label>
+                                <div class="custom-control custom-radio mb-2">
+                                  <input type="radio" id="original_tune" name="songwriter" class="custom-control-input">
+                                  <label class="custom-control-label" for="original_tune">I wrote this song or manage the songwriter (its an original tune)</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="artist_wrote" name="songwriter" class="custom-control-input">
+                                  <label class="custom-control-label" for="artist_wrote">Another artist wrote it (its a cover song)</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-none col-md-12">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label>Original songwriter name</label>
+                                      <input type="text" name="songwriter_name" class="form-control" value="">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label>Original song title</label>
+                                      <input type="text" name="original_song_title" class="form-control" value="">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div class="form-group mb-4">
+                                      <label class="d-block">Songwriter</label>
+                                      <div class="custom-control custom-radio mb-2">
+                                        <input type="radio" id="artists_recording" name="artists_recording" class="custom-control-input">
+                                        <label class="custom-control-label" for="artists_recording">This track doesn’t sample or remix another artists recording (required)</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                <label class="d-block">Explicit lyrics</label>
+                                <div class="custom-control custom-radio mb-2">
+                                  <input type="radio" id="explicit_no" name="explicit_lyrics" class="custom-control-input">
+                                  <label class="custom-control-label" for="explicit_no">No</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="explicit_yes" name="explicit_lyrics" class="custom-control-input">
+                                  <label class="custom-control-label" for="explicit_yes">Yes</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                <label class="d-block">Instrumental</label>
+                                <div class="custom-control custom-radio mb-2">
+                                  <input type="radio" id="vocals" name="instrumental" class="custom-control-input">
+                                  <label class="custom-control-label" for="vocals">This song contains vocals</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id=" no_vocals" name="instrumental" class="custom-control-input">
+                                  <label class="custom-control-label" for=" no_vocals">This song is instrumental and contains no vocals</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                                  <div class="form-group mb-4">
+                                      <label>Chose File</label>
+                                      <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="customFile">
+                                          <label class="custom-file-label" for="customFile">Choose file</label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card rounded-0 mb-2 shadow-sm">
+                      <div class="card-header border-top bg-white rounded-0" id="headingTwo">
+                        <h5 class="mb-0">
+                          <a data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2" class="">
+                          Track 2 </a>
+                        </h5>
+                      </div>
+                      <div id="collapse-2" class="collapse" aria-labelledby="headingTwo" data-parent="#tracks">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group mb-4">
+                                <label>Song Title</label>
+                                <input type="text" name="song_title" class="form-control" value="">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group mb-4">
+                                <label>Track Price</label>
+                                <select name="track_price" class="form-control">
+                                  <option value="0.99">0.99</option>
+                                  <option value="1.29">1.29</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="d-none col-md-12">
+                              <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="form-group mb-4">
+                                      <label class="d-block">Songwriter &nbsp;<a href="#songwriter" data-toggle="modal" class="help-icon"><i class="fas fa-info-circle"></i></a></label>
+                                      <div class="custom-control custom-radio mb-2">
+                                        <input type="radio" id="original_tune" name="songwriter" class="custom-control-input">
+                                        <label class="custom-control-label" for="original_tune">I wrote this song or manage the songwriter (its an original tune)</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                        <input type="radio" id="artist_wrote" name="songwriter" class="custom-control-input">
+                                        <label class="custom-control-label" for="artist_wrote">Another artist wrote it (its a cover song)</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label>Original songwriter name</label>
+                                      <input type="text" name="songwriter_name" class="form-control" value="">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group mb-4">
+                                      <label>Original song title</label>
+                                      <input type="text" name="original_song_title" class="form-control" value="">
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                <label class="d-block">Songwriter</label>
+                                <div class="custom-control custom-radio mb-2">
+                                  <input type="radio" id="artists_recording" name="artists_recording" class="custom-control-input">
+                                  <label class="custom-control-label" for="artists recording">This track doesn’t sample or remix another artists recording (required)</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                <label class="d-block">Explicit lyrics</label>
+                                <div class="custom-control custom-radio mb-2">
+                                  <input type="radio" id="explicit_no" name="explicit_lyrics" class="custom-control-input">
+                                  <label class="custom-control-label" for="explicit_no">No</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="explicit_yes" name="explicit_lyrics" class="custom-control-input">
+                                  <label class="custom-control-label" for="explicit_yes">Yes</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                <label class="d-block">Instrumental</label>
+                                <div class="custom-control custom-radio mb-2">
+                                  <input type="radio" id="vocals" name="instrumental" class="custom-control-input">
+                                  <label class="custom-control-label" for="vocals">This song contains vocals</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id=" no_vocals" name="instrumental" class="custom-control-input">
+                                  <label class="custom-control-label" for=" no_vocals">This song is instrumental and contains no vocals</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group mb-4">
+                                  <label>Chose File</label>
+                                  <div class="custom-file">
+                                      <input type="file" class="custom-file-input" id="customFile">
+                                      <label class="custom-file-label" for="customFile">Choose file</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <div class="card rounded-0 mb-2 shadow-sm ">
+                      <div class="card-header border-top bg-white rounded-0 d-flex justify-content-between">
+                        <h5 class="mb-0">
+                          Extra Optional But Awesome!
+                        </h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="youtube_money" id="youtube_money">
+                          <label class="custom-control-label" for="youtube_money"><strong>Youtube money</strong> ($4.95/yr + 20% of youtube ad revenue from matches we detect)
+                          Get notified and paid if your music is ever used in youtube video.we’ll add this single to youtube content id database. And continually scan for matches. Whenever your music is detected in any youtube video. You’ll be notified and ad revenue  will automatically go to you, instead of the person that uploaded the video
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="store_maximizer" id="store_maximizer">
+                          <label class="custom-control-label" for="store_maximizer"><strong>Store maximizer</strong> ($7.95/yr) Distrokid will automatically deliver this single to new online stores and streaming services as we add them, which is often, we’ll give you  notice each time we add the single to a new service
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="iphone_siri" id="iphone_siri">
+                          <label class="custom-control-label" for="iphone_siri"><strong>Shazam and iPhone siri </strong> ($0.99/yr) Make it easy for people to identify this single if they hear it playing on the radio/tv, restaurants, etc.
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="leave_legacy" id="leave_legacy">
+                          <label class="custom-control-label" for="leave_legacy"><strong>Leave a Legacy  </strong> ($29.00 one-time fee nonrecurring) Distro kid will never delete this single from stores due to lapsed distrokid membership. Even if you die you can always choose to delete it. Anytime or not. You will continue to accrue 100% of royalties. As normal forever leave your legacy for future generations.
+                          </label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <div class="card rounded-0 mb-2 shadow-sm ">
+                      <div class="card-header border-top bg-white rounded-0 d-flex justify-content-between">
+                        <h5 class="mb-0">
+                          Important Checkboxes (Mandatory)
+                        </h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="youtube_selected" id="youtube_selected">
+                          <label class="custom-control-label" for="youtube_selected">I selected Youtube Music as a store. So I won’t email distrokid asking “why did you upload my music to youtube”?
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="recorded_music" id="recorded_music">
+                          <label class="custom-control-label" for="recorded_music">I recorded this music and I am authorized to sell it in the stores worldwide and collect all the royalties
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="album_approval" id="album_approval">
+                          <label class="custom-control-label" for="album_approval">I am not using any other artist name in my name song titles or album title without their approval.
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" name="distribution_agreement" id="distribution_agreement">
+                          <label class="custom-control-label" for="distribution_agreement">I have read and agree to the terms of the distrokid distribution agreement.
+                          </label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-rounded btn-long">Done</button>
+              </div>
+            </form>
+          </div>
+      </div>
+      
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+    
+
+<!-- Artist Description  Modal -->
+<div class="modal fade" id="artist-name-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Artist Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="lists m-0 p-0 mb-4">
+          <li>Important only list your name, stage name or band name. Don’t include anyone else name (without their permission), label name</li>
+          <li>Don’t list featured artists here. Instead, put featured artists in your song titles</li>
+          <li>Capitalization use “Title Case”, stores will reject ALL CAPS, all lowercase and wEiRd caps.</li>
+        </ul>
+        <p class="mb-1"><strong>Already in itunes?</strong></p>
+        <p>You’re all set! This release will appear in iTunes alongside other worship tutorials studios releases.</p>
+        <p class="mb-1"><strong>Already on Spotify?</strong></p>
+        <p>You’re all set! This release will appear in Spotify alongside other worship tutorials studios releases.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Artist Description  Modal -->
+<div class="modal fade" id="album-cover" tabindex="-1" role="dialog" aria-labelledby="album-coverlabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="album-coverlabel">Album Cover Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="lists m-0 p-0 mb-4">
+          <li>Don’t increase the size of a smaller image to make it bigger. This makes the image blurry and stores reject blurry images.</li>
+          <li>Stores will reject artwork that contains a website address URL, twitter name or any image tats pixelated, rotated or poor quality. They also will reject the artwork with prices or store logo. Don’t put an iTunes or Spotify logo on your artwork.also don’t use the same artwork for multiple albums.</li>
+          <li>You own this artwork and everything in it. Stores will reject your artwork if it contains images you found online that you don’t have the explicit right to use.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Song Title Description  Modal -->
+<div class="modal fade" id="songtitle" tabindex="-1" role="dialog" aria-labelledby="album-coverlabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="album-coverlabel">Song Title Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="lists m-0 p-0 mb-4">
+          <li><strong>Featured Artists:</strong> use the wort feat. in the parenthesis with name separated with ampersand and commas. example (Sweetest Girl (feat. Akon, Lil Wayne, and Nila))</li>
+          <li><strong>Parts or volume:</strong> if your song has part 1, Volume 1, etc. use comma then the wort pt or vol. example metropolis, part.2</li>
+          <li><strong>Multiple parentheses</strong>, titles can have only 1 set of parentheses. If you need more use brackets instead. Example cheerleader (instrumental)</li>
+          <li><strong>Cover songs</strong>, if a cover music or mashup, do not include the original artist name here. Example thriller</li>
+          <li><strong>Capitalization</strong> use title case. Stores will reject all lowercase or mErO capitalization. Example Its The End of the World As We Know It (And I Feel Fine)</li>
+          <li><strong>No year/Dates</strong> Do not include any year info in your song title</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Songwriter Description  Modal -->
+<div class="modal fade" id="songwriter" tabindex="-1" role="dialog" aria-labelledby="album-coverlabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="album-coverlabel">Cover song</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="lists m-0 p-0 mb-4">
+          <li><strong>Cover songs are okay</strong> (A cover song is a song that you performed and recorded but the music was written by someone else example when your band plays “smooth criminal” (written by Micheal Jackson). This is totally okay. Distrokid makes it easy and legal to sell cover songs)</li>
+          <li><strong>Sampling is probably not okay</strong> (sampling is when you use the actual recording of another artists performance for example. If you use the 1971  recording of led zeppelins “when the levee breaks” as your drum track that’s generally not allowed unless you have the permission from the original artist)</li>
+          <li><strong>Remixes are probably not okay</strong> (A remix is not the same thing as the cover. A cover is if you played the song yourself. On the other hand. A remix requires the permission of the original artist and  is totally a different thing.)</li>
+          <li><strong>Distrokid will handle licensing and pay original artists</strong> (Distro kid will obtain the required compulsory mechanical license for you. We’ll automatically deduct the legally mandated fee of 9.1 cents per song sold in the US from your earning and pay it to the original songwriter. You’ll get 100% of the rest)</li>
+          <li><strong>Fee</strong> (Distokid charges a fee of $1 per month paid annually, so $12 billed to  your cc, to manage this cover song for you we will</li>
+          <ul class="m-0">
+            <li>Obtain license </li>
+            <li>Pay the original songwriter every month </li>
+            <li>Keep up to date on copyright laws affecting your music)</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/dropzone.js"></script>
+    <!-- Datepicker -->
+    <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- Perfect Scrollbar -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.js"></script>
+    <!-- Bootstrap selectpicker -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+    <script type="text/javascript">
+        $('.selectpicker').selectpicker();
+        $('.datepicker').datepicker();
+        Dropzone.options.myDropzone= {
+          url: '/',
+          autoProcessQueue: false,
+          uploadMultiple: true,
+          parallelUploads: 5,
+          maxFiles: 1,
+          maxFilesize: 1,
+          acceptedFiles: 'image/*',
+          addRemoveLinks: true,
+      }
+    </script>
+  </body>
+</html>

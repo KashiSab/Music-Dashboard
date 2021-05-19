@@ -1,0 +1,57 @@
+/*
+------------------------------------
+Auth Page Style --------------------------
+---------------------------------------------------*/
+body {
+	font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f3fa;
+  overflow-x: hidden;
+}
+.auth-page {
+  position: relative;
+  margin-bottom: 25px;
+  background-color: #fff;
+}
+.auth-content {
+  max-width: 900px;
+  margin: 0 auto ;
+}
+.auth-page .auth-page-body {
+    padding: 25px 25px 25px;
+}
+.auth-head-icon {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: #fff;
+    color: #f66106;
+    box-shadow: 0 5px 20px #d6dee4;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.auth-right-content-area {
+	background: rgb(246,97,6);
+    background: -moz-linear-gradient(left, rgba(246,97,6,1) 0%, rgba(128,26,202,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(246,97,6,1) 0%,rgba(128,26,202,1) 100%);
+    background: linear-gradient(to right, rgba(246,97,6,1) 0%,rgba(128,26,202,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f66106', endColorstr='#801aca',GradientType=1 );
+}
+.form-control {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border-color: rgba(0,0,0,.1);
+  padding: .65rem 1.25rem;
+  font-family: sans-serif,Arial;
+  -webkit-box-shadow: 0 3px 25px 0 rgba(53,73,95,.1);
+  box-shadow: 0 3px 25px 0 rgba(53,73,95,.1);
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #5c6bc0;
+}

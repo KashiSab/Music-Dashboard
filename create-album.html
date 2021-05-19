@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Create Album page</title>
+
+    <!-- Font Awsome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- Datepicker -->
+    <link id="bsdp-css" href="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <!--  Styles -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  </head>
+  <body>
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-white border-right" id="sidebar-wrapper">
+          <div class="sidebar-heading border-bottom">Music</div>
+          <div class="list-group list-group-flush">
+            <a href="dashboard.html" class="list-group-item list-group-item-action active">Dashboard</a>
+            <a href="albums.html" class="list-group-item list-group-item-action">Albums</a>
+            <a href="stores.html" class="list-group-item list-group-item-action">Stores</a>
+            <a href="genres.html" class="list-group-item list-group-item-action">Genres</a>
+            <a href="music.html" class="list-group-item list-group-item-action">Music</a>
+            <a href="album-listing.html" class="list-group-item list-group-item-action">Album Listing</a>
+            <a href="grid-album.html" class="list-group-item list-group-item-action">Album Grid</a>
+            <a href="login.html" class="list-group-item list-group-item-action">Login</a>
+        <a href="register.html" class="list-group-item list-group-item-action">Register</a>
+        <a href="forgot_password.html" class="list-group-item list-group-item-action">Forgot Password</a>
+          </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+          <nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">
+              <svg class="svg-inline--fa fa-align-left fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M288 44v40c0 8.837-7.163 16-16 16H16c-8.837 0-16-7.163-16-16V44c0-8.837 7.163-16 16-16h256c8.837 0 16 7.163 16 16zM0 172v40c0 8.837 7.163 16 16 16h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16zm16 312h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm256-200H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16h256c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16z"></path></svg>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle noarrow" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="assets/images/user-avatar.jpg" align="user_img" class="rounded-circle" width="40">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"><i class="fas fa-user"></i> &nbsp;Profile</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> &nbsp;Setting</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fas fa-power-off"></i> &nbsp; Logout</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+            <div class="container-fluid p-4">
+                <div class="page-title-area mt-3 mb-5">
+                  <div class="title-bredcrumb d-flex justify-content-between">
+                    <h2 class="mb-0">Create Album</h2>
+                    <a href="albums.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> &nbsp;Back</a>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="album-area shadow p-4">
+                            <form action="" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                            <label>Album Title</label>
+                                            <input class="form-control " type="text" name="title" placeholder="Album Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-4">
+                                            <label>Release Date</label>
+                                            <div class="input-group p-0">
+                                                <input type="text" placeholder="Choose Date" class="form-control datepicker" id="date">
+                                                <div class="input-group-append"><span class="input-group-text bg-white border-left-0"><i class="far fa-clock"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-4">
+                                            <label>Chose File</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input form-control" id="customFile">
+                                                <label class="custom-file-label bg-white" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-rounded btn-fix btn-shadow">Create Album</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+  <!-- /#wrapper -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script src="https://unpkg.com/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".custom-file-input").on("change", function() {
+              var fileName = $(this).val().split("\\").pop();
+              $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+            $('.datepicker').datepicker({});
+        });
+
+    </script>
+  </body>
+</html>
